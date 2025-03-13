@@ -21,7 +21,7 @@ PROGRAMMER_FLAGS = -f interface/stlink.cfg -f target/stm32f4x.cfg
 
 all: $(ELF)
 
-$(ELF): main.o startup_stm32f429zitx.o system_stm32f4xx.o stm32f4xx_it.o syscalls.o sysmem.o stm32f4xx_hal.o \
+$(ELF): main.o startup_stm32f429zitx.o system_stm32f4xx.o stm32f4xx_hal_msp.o stm32f4xx_it.o syscalls.o sysmem.o stm32f4xx_hal.o \
         stm32f4xx_hal_cortex.o stm32f4xx_hal_dma.o stm32f4xx_hal_flash.o stm32f4xx_hal_flash_ex.o stm32f4xx_hal_gpio.o \
 		stm32f4xx_hal_i2c.o stm32f4xx_hal_i2c_ex.o stm32f4xx_hal_pwr.o stm32f4xx_hal_pwr_ex.o \
         stm32f4xx_hal_rcc.o stm32f4xx_hal_rcc_ex.o stm32f4xx_hal_spi.o stm32f429i_discovery.o
@@ -35,6 +35,9 @@ startup_stm32f429zitx.o: startup/startup_stm32f429zitx.s
 	$(CC) $(CFLAGS) $(CPPFLAGS) $^ -c -g
 
 system_stm32f4xx.o: source/system_stm32f4xx.c
+	$(CC) $(CFLAGS) $(CPPFLAGS) $^ -c -g
+
+stm32f4xx_hal_msp.o: source/stm32f4xx_hal_msp.c
 	$(CC) $(CFLAGS) $(CPPFLAGS) $^ -c -g
 
 stm32f4xx_it.o: source/stm32f4xx_it.c
@@ -85,7 +88,6 @@ stm32f4xx_hal_rcc_ex.o: ../repositories/drivers/hal/stm32f4xx-hal-driver/Src/stm
 stm32f4xx_hal_spi.o: ../repositories/drivers/hal/stm32f4xx-hal-driver/Src/stm32f4xx_hal_spi.c
 	$(CC) $(CFLAGS) $(CPPFLAGS) $^ -c -g
 
-	
 stm32f429i_discovery.o: ../repositories/drivers/bsp/32f429idiscovery-bsp/stm32f429i_discovery.c
 	$(CC) $(CFLAGS) $(CPPFLAGS) $^ -c -g
 
