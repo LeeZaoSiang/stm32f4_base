@@ -1,8 +1,8 @@
 /**
   ******************************************************************************
-  * @file    stm32f429/inc/main.h 
+  * @file    stm32f429/inc/all.h 
   * @author  Lee Zao Siang
-  * @brief   Header for main.c module
+  * @brief   Header for all the header files inclusion
   ******************************************************************************
   * @attention
   *
@@ -17,15 +17,18 @@
   */
 
 /* Define to prevent recursive inclusion -------------------------------------*/
-#ifndef __MAIN_H
-#define __MAIN_H
+#ifndef __ALL_H
+#define __ALL_H
 
 /* Includes ------------------------------------------------------------------*/
-#include "all.h"
+#include "main.h"
+#include "stm32f4xx_hal.h"
+#include "stm32f429i_discovery.h"
+#include "tx_api.h"
 
 /* Exported types ------------------------------------------------------------*/
 /* Exported constants --------------------------------------------------------*/
 /* Exported macro ------------------------------------------------------------*/
 /* Exported functions ------------------------------------------------------- */
 
-#endif /* __MAIN_H */
+#endif /* __ALL_H */

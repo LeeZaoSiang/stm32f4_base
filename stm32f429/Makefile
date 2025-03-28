@@ -8,6 +8,8 @@ CPPFLAGS=-DSTM32F429xx \
 				 -I../repositories/drivers/hal/stm32f4xx-hal-driver/Inc \
 				 -I../repositories/drivers/bsp/32f429idiscovery-bsp \
 				 -I../repositories/drivers/cmsis/cmsis-core/Include \
+				 -I../repositories/rtos/threadx/common/inc \
+				 -I../repositories/rtos/threadx/ports/cortex_m4/gnu/inc
 							
 
 LINKER_FILE=linker/STM32F429ZITX_FLASH.ld

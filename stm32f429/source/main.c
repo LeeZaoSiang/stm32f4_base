@@ -18,7 +18,7 @@
   */
 
 /* Includes ------------------------------------------------------------------*/
-#include "main.h"
+#include "all.h"
 
 /** @addtogroup STM32F4xx_HAL_Examples
   * @{
@@ -70,6 +70,9 @@ int main(void)
   
   /* Configure EXTI Line0 (connected to PA0 pin) in interrupt mode */
   EXTILine0_Config();
+
+  /* Enter the ThreadX kernel. */
+  tx_kernel_enter( );
 
  
   /* Infinite loop */
