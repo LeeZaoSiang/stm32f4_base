@@ -24,14 +24,14 @@ PROGRAMMER_FLAGS = -f interface/stlink.cfg -f target/stm32f4x.cfg
 all: $(ELF)
 
 $(ELF): main.o startup_stm32f429zitx.o system_stm32f4xx.o stm32f4xx_hal_msp.o stm32f4xx_it.o syscalls.o sysmem.o stm32f4xx_hal.o \
-        stm32f4xx_hal_cortex.o stm32f4xx_hal_dma.o stm32f4xx_hal_flash.o stm32f4xx_hal_flash_ex.o stm32f4xx_hal_gpio.o \
+        stm32f4xx_hal_cortex.o stm32f4xx_hal_dma.o stm32f4xx_hal_dma_ex.o stm32f4xx_hal_flash.o stm32f4xx_hal_flash_ex.o stm32f4xx_hal_gpio.o \
 		stm32f4xx_hal_i2c.o stm32f4xx_hal_i2c_ex.o stm32f4xx_hal_pwr.o stm32f4xx_hal_pwr_ex.o \
-        stm32f4xx_hal_rcc.o stm32f4xx_hal_rcc_ex.o stm32f4xx_hal_spi.o stm32f429i_discovery.o
+        stm32f4xx_hal_rcc.o stm32f4xx_hal_rcc_ex.o stm32f4xx_hal_spi.o stm32f429i_discovery.o stm32f4xx_hal_tim.o stm32f4xx_hal_tim_ex.o stm32f4xx_hal_exti.o \
+		stm32f4xx_hal_flash_ramfunc.o
 	$(CC) $(CFLAGS) $(CPPFLAGS) $(LDFLAGS) $^ -o $(ELF)
 
 main.o: source/main.c
 	$(CC) $(CFLAGS) $(CPPFLAGS) $^ -c -g
-
 
 startup_stm32f429zitx.o: startup/startup_stm32f429zitx.s
 	$(CC) $(CFLAGS) $(CPPFLAGS) $^ -c -g
@@ -58,6 +58,9 @@ stm32f4xx_hal_cortex.o: ../repositories/drivers/hal/stm32f4xx-hal-driver/Src/stm
 	$(CC) $(CFLAGS) $(CPPFLAGS) $^ -c -g
 	
 stm32f4xx_hal_dma.o: ../repositories/drivers/hal/stm32f4xx-hal-driver/Src/stm32f4xx_hal_dma.c
+	$(CC) $(CFLAGS) $(CPPFLAGS) $^ -c -g
+
+stm32f4xx_hal_dma_ex.o: ../repositories/drivers/hal/stm32f4xx-hal-driver/Src/stm32f4xx_hal_dma_ex.c
 	$(CC) $(CFLAGS) $(CPPFLAGS) $^ -c -g
 
 stm32f4xx_hal_flash.o: ../repositories/drivers/hal/stm32f4xx-hal-driver/Src/stm32f4xx_hal_flash.c
@@ -88,6 +91,18 @@ stm32f4xx_hal_rcc_ex.o: ../repositories/drivers/hal/stm32f4xx-hal-driver/Src/stm
 	$(CC) $(CFLAGS) $(CPPFLAGS) $^ -c -g
 
 stm32f4xx_hal_spi.o: ../repositories/drivers/hal/stm32f4xx-hal-driver/Src/stm32f4xx_hal_spi.c
+	$(CC) $(CFLAGS) $(CPPFLAGS) $^ -c -g
+
+stm32f4xx_hal_tim.o: ../repositories/drivers/hal/stm32f4xx-hal-driver/Src/stm32f4xx_hal_tim.c
+	$(CC) $(CFLAGS) $(CPPFLAGS) $^ -c -g
+
+stm32f4xx_hal_tim_ex.o: ../repositories/drivers/hal/stm32f4xx-hal-driver/Src/stm32f4xx_hal_tim_ex.c
+	$(CC) $(CFLAGS) $(CPPFLAGS) $^ -c -g
+
+stm32f4xx_hal_exti.o: ../repositories/drivers/hal/stm32f4xx-hal-driver/Src/stm32f4xx_hal_exti.c
+	$(CC) $(CFLAGS) $(CPPFLAGS) $^ -c -g
+
+stm32f4xx_hal_flash_ramfunc.o: ../repositories/drivers/hal/stm32f4xx-hal-driver/Src/stm32f4xx_hal_flash_ramfunc.c
 	$(CC) $(CFLAGS) $(CPPFLAGS) $^ -c -g
 
 stm32f429i_discovery.o: ../repositories/drivers/bsp/32f429idiscovery-bsp/stm32f429i_discovery.c

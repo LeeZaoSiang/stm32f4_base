@@ -72,7 +72,7 @@ int main(void)
   EXTILine0_Config();
 
   /* Enter the ThreadX kernel. */
-  tx_kernel_enter( );
+  // tx_kernel_enter( );
 
  
   /* Infinite loop */
