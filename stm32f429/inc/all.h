@@ -24,7 +24,6 @@
 #include "main.h"
 #include "stm32f4xx_hal.h"
 #include "stm32f429i_discovery.h"
-#include "tx_api.h"
 
 /* Exported types ------------------------------------------------------------*/
 /* Exported constants --------------------------------------------------------*/
