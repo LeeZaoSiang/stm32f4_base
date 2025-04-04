@@ -22,8 +22,17 @@
 
 /* Includes ------------------------------------------------------------------*/
 #include "main.h"
+#include "tx_api.h"
 #include "stm32f4xx_hal.h"
 #include "stm32f429i_discovery.h"
+#include "app_threadx.h"
+#include "app_eclipse_rtos.h"
+#include "app_eclipse_rtos_config.h"
+#include "tx_user.h"
+#include "stm32f4xx_it.h"
+#include "stm32f4xx_hal_tim.h"
+#include "stm32f4xx.h"
+
 
 /* Exported types ------------------------------------------------------------*/
 /* Exported constants --------------------------------------------------------*/

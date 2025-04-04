@@ -1,9 +1,10 @@
+
 /* USER CODE BEGIN Header */
 /**
   ******************************************************************************
-  * @file           : main.h
-  * @brief          : Header for main.c file.
-  *                   This file contains the common defines of the application.
+  * @file    app_azure_rtos_config.h
+  * @author  MCD Application Team
+  * @brief   azure_rtos config header file
   ******************************************************************************
   * @attention
   *
@@ -19,19 +20,17 @@
 /* USER CODE END Header */
 
 /* Define to prevent recursive inclusion -------------------------------------*/
-#ifndef __MAIN_H
-#define __MAIN_H
-
+#ifndef APP_AZURE_RTOS_CONFIG_H
+#define APP_AZURE_RTOS_CONFIG_H
 #ifdef __cplusplus
 extern "C" {
 #endif
 
 /* Includes ------------------------------------------------------------------*/
-#include "all.h"
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
-// #include "stm32f4xx_nucleo_144.h"
+
 /* USER CODE END Includes */
 
 /* Exported types ------------------------------------------------------------*/
@@ -40,6 +39,9 @@ extern "C" {
 /* USER CODE END ET */
 
 /* Exported constants --------------------------------------------------------*/
+/* define the size of static threadX byte memory pools */
+#define TX_APP_MEM_POOL_SIZE                     3 * 1024
+
 /* USER CODE BEGIN EC */
 
 /* USER CODE END EC */
@@ -50,19 +52,17 @@ extern "C" {
 /* USER CODE END EM */
 
 /* Exported functions prototypes ---------------------------------------------*/
-void Error_Handler(void);
-
 /* USER CODE BEGIN EFP */
 
 /* USER CODE END EFP */
 
 /* Private defines -----------------------------------------------------------*/
-/* USER CODE BEGIN Private defines */
+/* USER CODE BEGIN PD */
 
-/* USER CODE END Private defines */
+/* USER CODE END PD */
 
 #ifdef __cplusplus
 }
 #endif
 
-#endif /* __MAIN_H */
+#endif /* APP_AZURE_RTOS_CONFIG_H */
