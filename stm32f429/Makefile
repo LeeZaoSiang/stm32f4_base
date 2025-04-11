@@ -53,8 +53,7 @@ $(ELF): main.o \
 		stm32f4xx_hal_exti.o \
 		stm32f4xx_hal_flash_ramfunc.o \
 		tx_initialize_low_level.o \
-        app_eclipse_rtos.o \
-        app_threadx.o \
+        threadx.o \
         tx_block_allocate.o \
         tx_block_pool_cleanup.o \
         tx_block_pool_create.o \
@@ -307,10 +306,7 @@ stm32f429i_discovery.o: ../repositories/drivers/bsp/32f429idiscovery-bsp/stm32f4
 tx_initialize_low_level.o: startup/tx_initialize_low_level.S
 	$(CC) $(CFLAGS) $(CPPFLAGS) $^ -c -g
 
-app_eclipse_rtos.o: source/app_eclipse_rtos.c
-	$(CC) $(CFLAGS) $(CPPFLAGS) $^ -c -g
-
-app_threadx.o: source/app_threadx.c
+threadx.o: source/threadx.c
 	$(CC) $(CFLAGS) $(CPPFLAGS) $^ -c -g
 	
 tx_block_allocate.o: ../repositories/rtos/threadx/common/src/tx_block_allocate.c

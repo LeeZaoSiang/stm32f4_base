@@ -1,13 +1,13 @@
-/* USER CODE BEGIN Header */
 /**
   ******************************************************************************
-  * @file         stm32f4xx_hal_msp.c
-  * @brief        This file provides code for the MSP Initialization
-  *               and de-Initialization codes.
+  * @file    stm32f4xx_hal_msp.c
+  * @author  MCD Application Team
+  * @brief   This file contains the HAL System and Peripheral (PPP) MSP initialization
+  *          and de-initialization functions.          
   ******************************************************************************
   * @attention
   *
-  * Copyright (c) 2021 STMicroelectronics.
+  * Copyright (c) 2017 STMicroelectronics.
   * All rights reserved.
   *
   * This software is licensed under terms that can be found in the LICENSE file
@@ -15,67 +15,87 @@
   * If no LICENSE file comes with this software, it is provided AS-IS.
   *
   ******************************************************************************
-  */
-/* USER CODE END Header */
+  */ 
 
 /* Includes ------------------------------------------------------------------*/
-#include "all.h"
-/* USER CODE BEGIN Includes */
+#include "stm32f4xx_hal.h"
 
-/* USER CODE END Includes */
+/** @addtogroup STM32F4xx_HAL_Driver
+  * @{
+  */
+
+/** @defgroup HAL_MSP HAL MSP
+  * @brief HAL MSP module.
+  * @{
+  */
 
 /* Private typedef -----------------------------------------------------------*/
-/* USER CODE BEGIN TD */
-
-/* USER CODE END TD */
-
 /* Private define ------------------------------------------------------------*/
-/* USER CODE BEGIN Define */
-
-/* USER CODE END Define */
-
 /* Private macro -------------------------------------------------------------*/
-/* USER CODE BEGIN Macro */
-
-/* USER CODE END Macro */
-
 /* Private variables ---------------------------------------------------------*/
-/* USER CODE BEGIN PV */
-
-/* USER CODE END PV */
-
 /* Private function prototypes -----------------------------------------------*/
-/* USER CODE BEGIN PFP */
+/* Private functions ---------------------------------------------------------*/
 
-/* USER CODE END PFP */
+/** @defgroup HAL_MSP_Private_Functions HAL MSP Private Functions
+  * @{
+  */
 
-/* External functions --------------------------------------------------------*/
-/* USER CODE BEGIN ExternalFunctions */
-
-/* USER CODE END ExternalFunctions */
-
-/* USER CODE BEGIN 0 */
-
-/* USER CODE END 0 */
 /**
-  * Initializes the Global MSP.
+  * @brief  Initializes the Global MSP.
+  * @note   This function is called from HAL_Init() function to perform system
+  *         level initialization (GPIOs, clock, DMA, interrupt).
+  * @retval None
   */
 void HAL_MspInit(void)
 {
-  /* USER CODE BEGIN MspInit 0 */
-
-  /* USER CODE END MspInit 0 */
-
   __HAL_RCC_SYSCFG_CLK_ENABLE();
   __HAL_RCC_PWR_CLK_ENABLE();
 
-  /* System interrupt init*/
-
-  /* USER CODE BEGIN MspInit 1 */
-
-  /* USER CODE END MspInit 1 */
 }
 
-/* USER CODE BEGIN 1 */
+/**
+  * @brief  DeInitializes the Global MSP.
+  * @note   This functiona is called from HAL_DeInit() function to perform system
+  *         level de-initialization (GPIOs, clock, DMA, interrupt).
+  * @retval None
+  */
+void HAL_MspDeInit(void)
+{
 
-/* USER CODE END 1 */
+}
+
+/**
+  * @brief  Initializes the PPP MSP.
+  * @note   This functiona is called from HAL_PPP_Init() function to perform 
+  *         peripheral(PPP) system level initialization (GPIOs, clock, DMA, interrupt)
+  * @retval None
+  */
+void HAL_PPP_MspInit(void)
+{
+
+}
+
+/**
+  * @brief  DeInitializes the PPP MSP.
+  * @note   This functiona is called from HAL_PPP_DeInit() function to perform 
+  *         peripheral(PPP) system level de-initialization (GPIOs, clock, DMA, interrupt)
+  * @retval None
+  */
+void HAL_PPP_MspDeInit(void)
+{
+
+}
+
+/**
+  * @}
+  */
+
+/**
+  * @}
+  */
+
+/**
+  * @}
+  */
+
+
