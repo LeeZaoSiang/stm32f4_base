@@ -1,12 +1,12 @@
 /**
   ******************************************************************************
   * @file    stm32f429/inc/all.h 
-  * @author  Lee Zao Siang
+  * @author  ???
   * @brief   Header for all the header files inclusion
   ******************************************************************************
   * @attention
   *
-  * Copyright (c) 2017 STMicroelectronics.
+  * Copyright (c) ???
   * All rights reserved.
   *
   * This software is licensed under terms that can be found in the LICENSE file

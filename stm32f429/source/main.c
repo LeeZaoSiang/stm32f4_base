@@ -1,13 +1,13 @@
 /**
   ******************************************************************************
   * @file    GPIO/GPIO_EXTI/Src/main.c 
-  * @author  MCD Application Team
+  * @author  ???
   * @brief   This example describes how to configure and use GPIOs through 
   *          the STM32F4xx HAL API.
   ******************************************************************************
   * @attention
   *
-  * Copyright (c) 2017 STMicroelectronics.
+  * Copyright (c) ???
   * All rights reserved.
   *
   * This software is licensed under terms that can be found in the LICENSE file
@@ -48,8 +48,8 @@ static void EXTILine0_Config(void);
 
 int main(void)
 {
- /* This sample code shows how to use STM32F4xx GPIO HAL API to toggle PG13 
-     IOs (connected to LED3 on STM32F429i-Discovery board) 
+ /* This sample code shows how to use STM32F4xx GPIO HAL API to toggle PG13
+    IOs (connected to LED3 on STM32F429i-Discovery board) 
     in an infinite loop.
     To proceed, 3 steps are required: */
 
@@ -61,9 +61,8 @@ int main(void)
      */
   HAL_Init();
 
-  /* Configure LED3 and LED4 */
+  /* Configure LED3 */
   BSP_LED_Init(LED3);
-  BSP_LED_Init(LED4);
   
   /* Configure the system clock to 180 MHz */
   SystemClock_Config();
@@ -75,12 +74,8 @@ int main(void)
   /* Infinite loop */
   while (1)
   {
-    BSP_LED_On(LED3);
-    BSP_LED_On(LED4);
-    for (unsigned long A = 0; A < 10000000; A++);   
-    BSP_LED_Off(LED3);
-    BSP_LED_Off(LED4);
-    for (unsigned long A = 0; A < 10000000; A++);
+    BSP_LED_Toggle(LED3);
+    for (unsigned long i = 0; i < 10000000; i++);
   }
 }
 

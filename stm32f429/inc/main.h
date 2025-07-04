@@ -1,12 +1,12 @@
 /**
   ******************************************************************************
   * @file    stm32f429/inc/main.h 
-  * @author  Lee Zao Siang
+  * @author  ???
   * @brief   Header for main.c module
   ******************************************************************************
   * @attention
   *
-  * Copyright (c) 2017 STMicroelectronics.
+  * Copyright (c) ???
   * All rights reserved.
   *
   * This software is licensed under terms that can be found in the LICENSE file
