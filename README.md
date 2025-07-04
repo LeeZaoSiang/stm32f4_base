@@ -1,4 +1,6 @@
-# stm32f4_base
+# stm32f4_threadx
+
+This branch includes Eclipse ThreadX RTOS for STM32F4 MCUs. Following indicates its folder structure:
 
 ### Directory layout
 
@@ -16,5 +18,12 @@
     |       └── threadx @ eclipse-threadx                        # Eclipse ThreadX RTOS
     └── stm32f429                                                # Application folder for STM32F429 devices
 
+### Basic Demonstration of Eclipse ThreadX
 
-The repositories folder contains public repositories (dependency like library and driver) required by all the STM32F4 MCUs and each of them has its own folder that contains individual source code, header, and Makefile. As for now only stm32f429 is created.
+The project in each STM32F4XX folder demonstrates basic features of ThreadX RTOS such as thread creation, stack allocation, priority setting, and thread preemption. For the time being, ThreadX is ported only to STM32F429 MCU. Other MCUs will be included soon.
+
+For more information regarding Eclipse ThreadX, please refer to: https://threadx.io/.
+
+### Building and Debugging
+
+Please refer to the readme file in the main branch.
