@@ -5,7 +5,7 @@ This branch includes Eclipse ThreadX RTOS for STM32F4 MCUs. Following indicates 
 ### Directory layout
 
     stm32f4_base
-    ├── repositories                         
+    ├── submodules                         
     │   ├── drivers   
     │   │   ├── bsp                            
     │   │   │   └── 32f429idiscovery-bsp @ STMicroelectronics    # Board Support Packages from ST Microelectronics
