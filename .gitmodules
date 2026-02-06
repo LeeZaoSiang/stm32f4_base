@@ -1,15 +1,15 @@
-[submodule "repositories/drivers/bsp/32f429idiscovery-bsp"]
-	path = repositories/drivers/bsp/32f429idiscovery-bsp
+[submodule "submodules/drivers/bsp/32f429idiscovery-bsp"]
+	path = submodules/drivers/bsp/32f429idiscovery-bsp
 	url = https://github.com/STMicroelectronics/32f429idiscovery-bsp
-[submodule "repositories/drivers/cmsis/cmsis-device-f4"]
-	path = repositories/drivers/cmsis/cmsis-device-f4
+[submodule "submodules/drivers/cmsis/cmsis-device-f4"]
+	path = submodules/drivers/cmsis/cmsis-device-f4
 	url = https://github.com/STMicroelectronics/cmsis-device-f4
-[submodule "repositories/drivers/cmsis/cmsis-core"]
-	path = repositories/drivers/cmsis/cmsis-core
+[submodule "submodules/drivers/cmsis/cmsis-core"]
+	path = submodules/drivers/cmsis/cmsis-core
 	url = https://github.com/STMicroelectronics/cmsis-core
-[submodule "repositories/drivers/hal/stm32f4xx-hal-driver"]
-	path = repositories/drivers/hal/stm32f4xx-hal-driver
+[submodule "submodules/drivers/hal/stm32f4xx-hal-driver"]
+	path = submodules/drivers/hal/stm32f4xx-hal-driver
 	url = https://github.com/STMicroelectronics/stm32f4xx-hal-driver
-[submodule "repositories/rtos/threadx"]
-	path = repositories/rtos/threadx
+[submodule "submodules/rtos/threadx"]
+	path = submodules/rtos/threadx
 	url = https://github.com/eclipse-threadx/threadx.git
