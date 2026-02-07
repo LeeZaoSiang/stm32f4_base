@@ -6,14 +6,18 @@ This repository is dedicated for STM32F4 series microcontrollers. It provides a 
 
     stm32f4_base
     ├── submodules                         
-    │   └── drivers   
-    │       ├── bsp                            
-    │       │   └── 32f429idiscovery-bsp @ STMicroelectronics    # Board Support Packages from ST Microelectronics
-    |       ├── cmsis                 
-    │       │   ├── cmsis-core @ STMicroelectronics              # CMSIS core from ST Microelectronics, cloned from ARM limited           
-    │       │   └── cmsis-device-f4 @ STMicroelectronics         # CMSIS STM32F4 device Peripheral Access Layer header and startup files
-    |       └── hal                 
-    │           └── stm32f4xx-hal-driver @ STMicroelectronics    # STM32F4 HAL                           
+    │   |── drivers   
+    │   │   ├── bsp                            
+    │   │   │   └── 32f429idiscovery-bsp @ STMicroelectronics    # Board Support Packages from ST Microelectronics
+    |   │   ├── cmsis                 
+    │   │   │   ├── cmsis-core @ STMicroelectronics              # CMSIS core from ST Microelectronics, cloned from ARM limited           
+    │   │   │   └── cmsis-device-f4 @ STMicroelectronics         # CMSIS STM32F4 device Peripheral Access Layer header and startup files
+    |   │   └── hal                 
+    │   │       └── stm32f4xx-hal-driver @ STMicroelectronics    # STM32F4 HAL      
+    │   └── middleware
+    │       └── usb
+    │           ├── stm32-mw-usb-host                            # USB host middleware for stm32 devices
+    │           └── stm32-mw-usb-device                          # USB device middleware for stm32 devices
     └── stm32f429                                                # Application folder for STM32F429 devices
 
 
