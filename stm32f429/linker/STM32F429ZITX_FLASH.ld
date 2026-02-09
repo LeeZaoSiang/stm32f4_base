@@ -88,7 +88,7 @@ SECTIONS
   } >ROM
 
   /* .ARM.extab (READONLY) : */ /* The READONLY keyword is only supported in GCC11 and later, remove it if using GCC10 or earlier. */
-  .ARM.extab :
+  .ARM.extab (READONLY) :
   {
     . = ALIGN(4);
     *(.ARM.extab* .gnu.linkonce.armextab.*)
@@ -96,7 +96,7 @@ SECTIONS
   } >ROM
 
   /* .ARM (READONLY) : */ /* The READONLY keyword is only supported in GCC11 and later, remove it if using GCC10 or earlier. */
-  .ARM :
+  .ARM (READONLY) :
   {
     . = ALIGN(4);
     __exidx_start = .;
@@ -106,7 +106,7 @@ SECTIONS
   } >ROM
 
   /* .preinit_array (READONLY) : */ /* The READONLY keyword is only supported in GCC11 and later, remove it if using GCC10 or earlier. */
-  .preinit_array :
+  .preinit_array (READONLY) :
   {
     . = ALIGN(4);
     PROVIDE_HIDDEN (__preinit_array_start = .);
@@ -116,7 +116,7 @@ SECTIONS
   } >ROM
 
   /* .init_array (READONLY) : *//* The READONLY keyword is only supported in GCC11 and later, remove it if using GCC10 or earlier. */
-  .init_array : 
+  .init_array (READONLY) : 
   {
     . = ALIGN(4);
     PROVIDE_HIDDEN (__init_array_start = .);
@@ -127,7 +127,7 @@ SECTIONS
   } >ROM
 
   /*.fini_array (READONLY) : *//* The READONLY keyword is only supported in GCC11 and later, remove it if using GCC10 or earlier. */
-  .fini_array :
+  .fini_array (READONLY) :
   {
     . = ALIGN(4);
     PROVIDE_HIDDEN (__fini_array_start = .);
