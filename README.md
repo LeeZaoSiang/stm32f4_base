@@ -38,14 +38,13 @@ All the demo projects in this repository were developed solely under OpenOCD but
 
 To build and program the code into your target:
 
-1. Navigate into stm32f429 folder in command prompt and type "make" to build the code. An Executable and Linkable Format file (.elf) file will be generated.
-2. Once it has finished building, type "make genbin". This will generate the required binary (.bin) file from the Executable and Linkable Format file above.
-3. Type "make program" to program your target.
+1. Navigate into stm32f429 folder in command prompt and type "make" to build the code. An Executable and Linkable Format file (.elf) file will be generated inside a folder named "build".
+2. Type "make program" to program your target.
 
 For debugging:
 
 1. Type "make debug".
-2. Open a new command prompt and navigate it into the stm32f429 folder and type "make start debug".
+2. Open a new command prompt and navigate it into the stm32f429 folder and type "make start_debug".
 3. Once the GNU Debugger is invoked, type this to connect it to the OpenOCD: target extended-remote:3333
 
 For more information on OpenOCD and GDB, please refer to: https://openocd.org/pages/documentation.html and https://www.sourceware.org/gdb/.
