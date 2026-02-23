@@ -15,7 +15,12 @@ This branch includes Eclipse ThreadX RTOS for STM32F4 MCUs. Following indicates 
     |   |   └── hal                 
     │   │       └── stm32f4xx-hal-driver @ STMicroelectronics    # STM32F4 HAL         
     |   └── rtos                
-    |       └── threadx @ eclipse-threadx                        # Eclipse ThreadX RTOS
+    |       └── eclipse_threadx 
+    |           ├── threadx @ eclipse-threadx                    # Eclipse ThreadX RTOS
+    |           └── components
+    |               ├── filex @ eclipse-threadx                  # FAT compatible file system for ThreadX
+    |               ├── netxduo @ eclipse-threadx                # TCP/IP network stack for ThreadX
+    |               └── usbx @ eclipse-threadx                   # USB component for ThreadX
     └── stm32f429                                                # Application folder for STM32F429 devices
 
 ### Basic Demonstration of Eclipse ThreadX
@@ -26,4 +31,17 @@ For more information regarding Eclipse ThreadX, please refer to: https://threadx
 
 ### Building and Debugging
 
-Please refer to the readme file in the main branch.
+To build and program the code into your target:
+
+1. Navigate into stm32f429 folder in command prompt and type "make" to build the code. An Executable and Linkable Format file (.elf) file will be generated inside a folder named "build".
+2. Type "make program" to program your target.
+
+For debugging:
+
+1. Type "make debug".
+2. Open a new command prompt and navigate it into the stm32f429 folder and type "make start_debug".
+3. Once the GNU Debugger is invoked, type this to connect it to the OpenOCD: target extended-remote:3333
+
+For more information on OpenOCD and GDB, please refer to: https://openocd.org/pages/documentation.html and https://www.sourceware.org/gdb/.
+
+To clean up all the generated files during compilation, type "make clean".
