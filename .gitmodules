@@ -10,6 +10,3 @@
 [submodule "submodules/drivers/hal/stm32f4xx-hal-driver"]
 	path = submodules/drivers/hal/stm32f4xx-hal-driver
 	url = https://github.com/STMicroelectronics/stm32f4xx-hal-driver
-[submodule "submodules/rtos/threadx"]
-	path = submodules/rtos/threadx
-	url = https://github.com/eclipse-threadx/threadx.git
