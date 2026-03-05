@@ -319,7 +319,7 @@ CFLAGS += -MMD -MP -MF"$(@:%.o=%.d)"
 # LDFLAGS
 #######################################
 # link script
-LDSCRIPT = STM32F429ZITX_FLASH.ld
+LDSCRIPT = core/src/STM32F429ZITX_FLASH.ld
 
 # libraries
 LIBS = -lc -lm -lnosys 
