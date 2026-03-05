@@ -36,13 +36,13 @@ BUILD_DIR = build
 ######################################
 # C sources
 C_SOURCES = \
-source/main.c \
-source/system_stm32f4xx.c \
-stm32f4xx_hasource/stm32f4xx_hal_msp.c \
-source/stm32f4xx_hal_timebase_tim.c \
-source/stm32f4xx_it.c \
-source/system/syscalls.c \
-source/system/sysmem.c \
+core/src/main.c \
+core/src/system_stm32f4xx.c \
+core/src/stm32f4xx_hal_msp.c \
+core/src/stm32f4xx_hal_timebase_tim.c \
+core/src/stm32f4xx_it.c \
+core/src/system/syscalls.c \
+core/src/system/sysmem.c \
 ../submodules/drivers/hal/stm32f4xx-hal-driver/Src/stm32f4xx_hal.c \
 ../submodules/drivers/hal/stm32f4xx-hal-driver/Src/stm32f4xx_hal_cortex.c \
 ../submodules/drivers/hal/stm32f4xx-hal-driver/Src/stm32f4xx_hal_dma.c \
@@ -62,7 +62,7 @@ source/system/sysmem.c \
 ../submodules/drivers/hal/stm32f4xx-hal-driver/Src/stm32f4xx_hal_exti.c \
 ../submodules/drivers/hal/stm32f4xx-hal-driver/Src/stm32f4xx_hal_flash_ramfunc.c \
 ../submodules/drivers/bsp/32f429idiscovery-bsp/stm32f429i_discovery.c \
-source/threadx.c \
+threadx/src/threadx.c \
 ../submodules/rtos/eclipse_threadx/threadx/common/src/tx_block_allocate.c \
 ../submodules/rtos/eclipse_threadx/threadx/common/src/tx_block_pool_cleanup.c \
 ../submodules/rtos/eclipse_threadx/threadx/common/src/tx_block_pool_create.c \
@@ -223,12 +223,12 @@ source/threadx.c \
 
 # ASM sources
 ASM_SOURCES = \
-startup/startup_stm32f429zitx.s
+core/src/startup_stm32f429zitx.s
 
 
 # ASMM sources
 ASMM_SOURCES = \
-startup/tx_initialize_low_level.S \
+threadx/src/tx_initialize_low_level.S \
 ../submodules/rtos/eclipse_threadx/threadx/ports/cortex_m4/gnu/src/tx_thread_context_restore.S \
 ../submodules/rtos/eclipse_threadx/threadx/ports/cortex_m4/gnu/src/tx_thread_context_save.S \
 ../submodules/rtos/eclipse_threadx/threadx/ports/cortex_m4/gnu/src/tx_thread_interrupt_control.S \
@@ -290,7 +290,8 @@ AS_INCLUDES =
 
 # C includes
 C_INCLUDES = \
--Iinc \
+-Ithreadx/inc \
+-Icore/inc \
 -I../submodules/drivers/cmsis/cmsis-device-f4/Include  \
 -I../submodules/drivers/hal/stm32f4xx-hal-driver/Inc \
 -I../submodules/drivers/hal/stm32f4xx-hal-driver/Inc/Legacy \
@@ -318,7 +319,7 @@ CFLAGS += -MMD -MP -MF"$(@:%.o=%.d)"
 # LDFLAGS
 #######################################
 # link script
-LDSCRIPT = linker/STM32F429ZITX_FLASH.ld
+LDSCRIPT = STM32F429ZITX_FLASH.ld
 
 # libraries
 LIBS = -lc -lm -lnosys 
