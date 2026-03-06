@@ -1,13 +1,14 @@
+
 /* USER CODE BEGIN Header */
 /**
   ******************************************************************************
-  * @file           : main.h
-  * @brief          : Header for main.c file.
-  *                   This file contains the common defines of the application.
+  * @file    app_azure_rtos.h
+  * @author  MCD Application Team
+  * @brief   azure_rtos application header file
   ******************************************************************************
   * @attention
   *
-  * Copyright (c) 2026 STMicroelectronics.
+  * Copyright (c) 2021 STMicroelectronics.
   * All rights reserved.
   *
   * This software is licensed under terms that can be found in the LICENSE file
@@ -19,16 +20,18 @@
 /* USER CODE END Header */
 
 /* Define to prevent recursive inclusion -------------------------------------*/
-#ifndef __MAIN_H
-#define __MAIN_H
-
+#ifndef APP_AZURE_RTOS_H
+#define APP_AZURE_RTOS_H
 #ifdef __cplusplus
 extern "C" {
 #endif
 
 /* Includes ------------------------------------------------------------------*/
-#include "stm32f4xx_hal.h"
+#include "app_azure_rtos_config.h"
 
+#include "app_threadx.h"
+
+#include "app_usbx_device.h"
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
 
@@ -49,23 +52,18 @@ extern "C" {
 
 /* USER CODE END EM */
 
-extern PCD_HandleTypeDef hpcd_USB_OTG_HS;
-
 /* Exported functions prototypes ---------------------------------------------*/
-void Error_Handler(void);
-
 /* USER CODE BEGIN EFP */
 
 /* USER CODE END EFP */
 
 /* Private defines -----------------------------------------------------------*/
+/* USER CODE BEGIN PD */
 
-/* USER CODE BEGIN Private defines */
-
-/* USER CODE END Private defines */
+/* USER CODE END PD */
 
 #ifdef __cplusplus
 }
 #endif
 
-#endif /* __MAIN_H */
+#endif /* APP_AZURE_RTOS_H */
