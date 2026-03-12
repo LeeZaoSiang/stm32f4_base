@@ -63,6 +63,10 @@ threadx/src/app_azure_rtos.c \
 ../submodules/drivers/hal/stm32f4xx-hal-driver/Src/stm32f4xx_hal_pcd.c \
 ../submodules/drivers/hal/stm32f4xx-hal-driver/Src/stm32f4xx_hal_pcd_ex.c \
 ../submodules/drivers/hal/stm32f4xx-hal-driver/Src/stm32f4xx_ll_usb.c \
+../submodules/drivers/hal/stm32f4xx-hal-driver/Src/stm32f4xx_hal_spi.c \
+../submodules/drivers/bsp/32f429idiscovery-bsp/stm32f429i_discovery.c \
+../submodules/drivers/hal/stm32f4xx-hal-driver/Src/stm32f4xx_hal_i2c.c \
+../submodules/drivers/hal/stm32f4xx-hal-driver/Src/stm32f4xx_hal_i2c_ex.c \
 core/src/system_stm32f4xx.c \
 ../submodules/rtos/eclipse_threadx/components/usbx/common/core/src/ux_device_stack_alternate_setting_get.c \
 ../submodules/rtos/eclipse_threadx/components/usbx/common/core/src/ux_device_stack_alternate_setting_set.c \
@@ -392,7 +396,8 @@ C_DEFS =  \
 -DTX_INCLUDE_USER_DEFINE_FILE \
 -DUX_INCLUDE_USER_DEFINE_FILE \
 -DUSE_HAL_DRIVER \
--DSTM32F429xx
+-DSTM32F429xx \
+-DUSE_STM32F429I_DISCO
 
 
 # AS includes
@@ -426,7 +431,8 @@ C_INCLUDES =  \
 -I../submodules/rtos/eclipse_threadx/components/usbx/common/usbx_stm32_device_controllers/ \
 -I../submodules/rtos/eclipse_threadx/components/usbx/common/usbx_device_classes/inc/ \
 -I../submodules/rtos/eclipse_threadx/threadx/common/inc/ \
--I../submodules/rtos/eclipse_threadx/threadx/ports/cortex_m4/gnu/inc/
+-I../submodules/rtos/eclipse_threadx/threadx/ports/cortex_m4/gnu/inc/ \
+-I../submodules/drivers/bsp/32f429idiscovery-bsp
 
 
 # compile gcc flags

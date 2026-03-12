@@ -63,15 +63,13 @@ UINT MX_USBX_Device_Init(VOID *memory_ptr)
   TX_BYTE_POOL *byte_pool = (TX_BYTE_POOL*)memory_ptr;
 
   (void)byte_pool;
+  
 
   ret = _ux_dcd_stm32_initialize((ULONG)USB_OTG_FS, (ULONG)&hpcd_USB_OTG_HS);
   if (ret != UX_SUCCESS)
   {
     return ret;
   }
-
-
-
  return ret;
 }
 

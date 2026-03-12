@@ -32,6 +32,8 @@ extern "C" {
 #include "app_threadx.h"
 
 #include "app_usbx_device.h"
+#include "stm32f429i_discovery.h"
+#include "main.h"
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
 

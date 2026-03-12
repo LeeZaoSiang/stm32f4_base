@@ -119,14 +119,8 @@ VOID tx_application_define(VOID *first_unused_memory)
 
     if (MX_USBX_Device_Init(memory_ptr) != UX_SUCCESS)
     {
-      /* USER CODE BEGIN MX_USBX_Device_Init_Error */
-
-      /* USER CODE END MX_USBX_Device_Init_Error */
+      Error_Handler();
     }
-
-    /* USER CODE BEGIN MX_USBX_Device_Init_Success */
-
-    /* USER CODE END MX_USBX_Device_Init_Success */
   }
 }
 

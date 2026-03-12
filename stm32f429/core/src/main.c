@@ -90,6 +90,8 @@ int main(void)
   /* Initialize all configured peripherals */
   MX_GPIO_Init();
   MX_USB_OTG_HS_PCD_Init();
+  BSP_LED_Init(LED3);
+  BSP_LED_Init(LED4);
   /* USER CODE BEGIN 2 */
 
   /* USER CODE END 2 */
@@ -245,8 +247,13 @@ void Error_Handler(void)
   /* USER CODE BEGIN Error_Handler_Debug */
   /* User can add his own implementation to report the HAL error return state */
   __disable_irq();
+  BSP_LED_Off(LED4);
+  BSP_LED_Off(LED3);
   while (1)
   {
+    BSP_LED_Toggle(LED3);
+    BSP_LED_Toggle(LED4);
+    HAL_Delay(100);
   }
   /* USER CODE END Error_Handler_Debug */
 }
