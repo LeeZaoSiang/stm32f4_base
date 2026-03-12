@@ -36,9 +36,9 @@ BUILD_DIR = build
 ######################################
 # C sources
 C_SOURCES =  \
-source/main.c \
-source/stm32f4xx_it.c \
-source/stm32f4xx_hal_msp.c \
+core/src/main.c \
+core/src/stm32f4xx_it.c \
+core/src/stm32f4xx_hal_msp.c \
 ../submodules/drivers/hal/stm32f4xx-hal-driver/Src/stm32f4xx_hal.c \
 ../submodules/drivers/hal/stm32f4xx-hal-driver/Src/stm32f4xx_hal_cortex.c \
 ../submodules/drivers/hal/stm32f4xx-hal-driver/Src/stm32f4xx_hal_dma.c \
@@ -58,13 +58,13 @@ source/stm32f4xx_hal_msp.c \
 ../submodules/drivers/hal/stm32f4xx-hal-driver/Src/stm32f4xx_hal_exti.c \
 ../submodules/drivers/hal/stm32f4xx-hal-driver/Src/stm32f4xx_hal_flash_ramfunc.c \
 ../submodules/drivers/bsp/32f429idiscovery-bsp/stm32f429i_discovery.c \
-source/system_stm32f4xx.c \
-source/system/sysmem.c \
-source/system/syscalls.c  
+core/src/system_stm32f4xx.c \
+core/src/system/sysmem.c \
+core/src/system/syscalls.c  
 
 # ASM sources
 ASM_SOURCES =  \
-startup/startup_stm32f429zitx.s
+core/src/startup_stm32f429zitx.s
 
 # ASMM sources
 ASMM_SOURCES = 
@@ -122,7 +122,7 @@ AS_INCLUDES =
 
 # C includes
 C_INCLUDES =  \
--Iinc \
+-Icore/inc \
 -I../submodules/drivers/hal/stm32f4xx-hal-driver/Inc \
 -I../submodules/drivers/hal/stm32f4xx-hal-driver/Inc/Legacy \
 -I../submodules/drivers/cmsis/cmsis-device-f4/Include \
@@ -148,7 +148,7 @@ CFLAGS += -MMD -MP -MF"$(@:%.o=%.d)"
 # LDFLAGS
 #######################################
 # link script
-LDSCRIPT = linker/STM32F429ZITX_FLASH.ld
+LDSCRIPT = core/src/STM32F429ZITX_FLASH.ld
 
 # libraries
 LIBS = -lc -lm -lnosys 
